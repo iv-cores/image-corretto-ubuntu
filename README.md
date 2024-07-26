@@ -1,6 +1,6 @@
 # Amazon Corretto JDK + Ubuntu Jammy
 
-This Docker image is built to facilitate the development and building of Java applications using Amazon Corretto JDK on Ubuntu Jammy.
+This Docker image is designed to containerize the build environments for Java applications using Amazon Corretto JDK on Ubuntu Jammy. While Alpine is great, sometimes you need something a little more feature-rich.
 
 ## Features
 
