@@ -3,7 +3,7 @@ import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 // Define parameters in the job configuration
 properties([
     parameters([
-        booleanParam(name: 'publish docker', defaultValue: "${env.BRANCH_IS_PRIMARY}", description: 'publish to the docker repository'),
+        booleanParam(name: 'publish docker', defaultValue: "${env.BRANCH_IS_PRIMARY}".equalsIgnoreCase("true"), description: 'publish to the docker repository'),
         string(name: 'publish tags', defaultValue: 'latest, 21-jammy', description: 'comma seperated list of tags to publish')
     ])
 ])
