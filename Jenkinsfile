@@ -13,7 +13,7 @@ node {
     checkout scm
 
     def isPublishToDocker = params['publish docker'] ?: false
-    def tags = splitTags(params['tags'])
+    def tags = splitTags(params['publish tags'])
     def imageName = "corretto-ubuntu"
 
     echo "isPublishToDocker=${isPublishToDocker}"
