@@ -16,6 +16,11 @@ node {
     def tags = splitTags(params['tags'])
     def imageName = "corretto-ubuntu"
 
+    echo "isPublishToDocker=${isPublishToDocker}"
+    echo "tags=${tags}"
+    echo "imageName=${imageName}"
+    
+
     def image = null
     stage ("build docker") {
         image = docker.build("${imageName}:latest", ".")
