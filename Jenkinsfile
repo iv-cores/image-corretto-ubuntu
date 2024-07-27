@@ -27,7 +27,7 @@ node {
             return
         }
 
-        docker.withRegistry(registryUrl, 'docker-hub-credentials') {
+        docker.withRegistry(env.DOCKER_URI_SNAPSHOT, 'docker-snapshot') {
             tags.each { tag ->
                 try {
                     image.push(tag)
