@@ -9,15 +9,15 @@ This Docker image is designed to containerize the build environments for Java ap
 
 ## Usage
 
-The following is a usage example to build a project using the Gradle wrapper.
+The following is a usage example to build a project in the current working directory using the Gradle wrapper.
 
 ```sh
 docker run \
   --rm \
   --name "build-in-docker" \
   --workdir "/build" \
-  --env "${MY_BUILD_DIR}:/build" \
+  --volume "$PWD:/build" \
   --entrypoint "./gradlew" \
-  "${IMAGE_NAME}" \
-  "build"
+  "registry.ivcode.org/corretto-ubuntu:21-jammy" \
+  clean build
 ```
