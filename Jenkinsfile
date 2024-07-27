@@ -10,13 +10,15 @@ properties([
 
 
 node {
+    checkout scm
+
     def isPublishToDocker = params['publish docker'] ?: false
     def tags = splitTags(params['tags'])
     def imageName = "corretto-ubuntu"
 
     def image = null
     stage ("build docker") {
-        image = docker.build("${imageName}:latest", "--file ./Dockerfile .")
+        image = docker.build("${imageName}:latest", ".")
     }
 
     stage ("publish docker") {
