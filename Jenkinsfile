@@ -1,4 +1,4 @@
-@Library("iv-jenkins") _
+@Library("iv-jenkins@isaiah/jenkins") _
 
 DockerImageBuild ([
     "name": "corretto-ubuntu",
